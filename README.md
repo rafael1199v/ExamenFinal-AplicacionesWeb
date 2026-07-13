@@ -132,8 +132,6 @@ Used to manage shared application state through a single globally accessible ins
 
 **Implementations:** `BlogList.js`, `ProductList.js`, `Cart.js`
 
-![Singleton](./schema_design/singleton.png)
-
 ```mermaid
 classDiagram
   class BlogList {
@@ -167,7 +165,6 @@ classDiagram
     +clear()
   }
 
-  BlogList --> BlogList : instance
   Cart --> ProductList : uses instance
 ```
 
@@ -179,7 +176,6 @@ Encapsulates actions as objects, decoupling the caller from the logic that execu
 
 **Implementations:** `Command/BlogCommand.js`, `Command/CartCommand.js`, `Command/LayoutCommand.js`
 
-![Command](./schema_design/command.png)
 
 ```mermaid
 classDiagram
@@ -225,8 +221,6 @@ Allows swapping validation algorithms at runtime by injecting a strategy into a 
 
 **Implementations:** `Validators/ValidatorForm.js` + four concrete strategies
 
-![Strategy](./schema_design/strategy.png)
-
 ```mermaid
 classDiagram
   class ValidatorForm {
@@ -262,8 +256,6 @@ classDiagram
 ## Database Schema
 
 Eight Prisma models backed by PostgreSQL.
-
-![Database Schema](./schema_design/database_schema.png)
 
 ```mermaid
 erDiagram
